@@ -5,6 +5,6 @@ RUN apk add --no-cache py3-pip && pip install --no-cache-dir -r /giropops-senhas
 FROM base
 COPY --from=base /giropops-senhas /giropops-senhas
 WORKDIR /giropops-senhas
-ENV REDIS_HOST=redis
+ENV REDIS_HOST=localhost
 RUN rm -rf /root/.cache /root/.cargo /usr/local/include /usr/local/share
 CMD flask run --host=0.0.0.0
